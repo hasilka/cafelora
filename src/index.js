@@ -1,17 +1,20 @@
 import './style.css';
 
+import { Layer } from './Layer/index';
+
 console.log('funguju!');
+
 //3.cviceni//
 const navBtnElm = document.querySelector('#nav-btn');
 const navElm = document.querySelector('#nav');
 navBtnElm.addEventListener('click', () => {
-  navElm.classList.toggle('.nav-closed');
+  navElm.classList.toggle('nav-closed');
 });
 
 const navLinkElms = document.querySelectorAll('.nav-link');
 for (let i = 0; i < navLinkElms.length; i++) {
   navLinkElms[i].addEventListener('click', () => {
-    navElm.classList.toggle('.nav-closed');
+    navElm.classList.toggle('nav-closed');
   });
 }
 
@@ -32,3 +35,20 @@ orderBtnElm.addEventListener('click', () => {
     ordered = false;
   }
 });
+
+//5. cvičení //
+
+const drinkInfoElm = document.querySelector('#drink__info');
+drinkInfoElm.innerHTML +=
+  Layer({
+    color: '#feeeca',
+    label: 'mléčná pěna',
+  }) +
+  Layer({
+    color: '#fed7b0',
+    label: 'teplé mléko',
+  }) +
+  Layer({
+    color: '#613916',
+    label: 'espresso',
+  });
